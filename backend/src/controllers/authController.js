@@ -87,3 +87,18 @@ export const signIn = async (req, res) => {
     return res.status(500).json({ message: "loi dang nhap" });
   }
 };
+
+export const signOut = async (req, res) => {
+  try {
+    const refreshToken = req.cookies?.refreshToken;
+    if(refreshToken) {
+    await Session.deleteOne({ refreshToken });
+    res.clearCookie("refreshToken");
+    
+    }
+      return res.sendStatus(204)
+  } catch (error) {
+    console.log('loi dang xuat',error);
+    return res.status(500).json({ message: "loi dang xuat" });
+  }
+}
