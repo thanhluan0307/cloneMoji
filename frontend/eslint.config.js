@@ -27,6 +27,15 @@ export default defineConfig([
     languageOptions: { globals: globals.browser },
   },
   {
+    files: ["src/components/ui/**/*.tsx"],
+    rules: {
+      "react-refresh/only-export-components": [
+        "error",
+        { allowConstantExport: true, allowExportNames: ["buttonVariants"] },
+      ],
+    },
+  },
+  {
     files: ["*.config.{js,ts}"],
     extends: [js.configs.recommended],
     languageOptions: { globals: globals.node },
