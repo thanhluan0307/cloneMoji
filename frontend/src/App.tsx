@@ -4,6 +4,7 @@ import { Toaster } from 'sonner'
 import { SignIn } from "./pages/SignIn"
 import { SignUp } from "./pages/SignUp"
 import { Chat } from "./pages/Chat"
+import ProtectedRoute from './components/auth/protected'
 function App() {
 
   return (
@@ -22,10 +23,12 @@ function App() {
           />
 
           {/* protected routes */}
-          <Route
-            path="/"
-            element={<Chat />}
-          />
+          <Route element={<ProtectedRoute />}>
+            <Route
+              path="/"
+              element={<Chat />}
+            />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>
