@@ -25,5 +25,5 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "taiwind.config.ts"]
+  "include": ["src", "tailwind.config.ts"]
 }

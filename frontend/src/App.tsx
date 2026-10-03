@@ -5,7 +5,15 @@ import { SignIn } from "./pages/SignIn"
 import { SignUp } from "./pages/SignUp"
 import { Chat } from "./pages/Chat"
 import ProtectedRoute from './components/auth/protected'
+import { useThemeStore } from './stores/useThemeStore'
+import { useEffect } from 'react'
+
 function App() {
+  const { isDark, setTheme } = useThemeStore();
+
+  useEffect(() => {
+    setTheme(isDark);
+  }, [isDark]);
 
   return (
     <>
