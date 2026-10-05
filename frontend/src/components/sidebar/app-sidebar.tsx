@@ -22,8 +22,8 @@ import CreateNewChat from "../chat/CreateNewChat"
 import NewGroupChatModal from "../chat/NewGroupChatModal"
 import GroupChatList from "../chat/GroupChatList"
 import AddFriendModal from "../chat/AddFriendModal"
-import DirrectMessageList from "../chat/DirrectMessageList"
 import { useThemeStore } from "@/stores/useThemeStore"
+import DirectMessageList from "../chat/DirectMessageList"
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const { isDark, toggleTheme } = useThemeStore()
@@ -81,7 +81,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <AddFriendModal />
           </SidebarGroupAction>
           <SidebarGroupContent>
-            <DirrectMessageList />
+            <DirectMessageList />
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
